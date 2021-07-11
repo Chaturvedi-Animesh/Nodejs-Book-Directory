@@ -40,7 +40,6 @@ app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 app.get('/',(req,res)=>{
     book.find({},function(err,doc){
-        console.log(doc)
         res.render('index',{books:doc})
     })
 })
@@ -55,6 +54,7 @@ app.post('/addbook',upload.single('photo'),(req,res)=>{
     })
 
     b.save().then(result=>{
+        console.log("New entry added in Database")
         console.log(result)
         res.redirect('/')
     })
@@ -84,7 +84,7 @@ app.put('/update',(req,res)=>{
 
 app.put('/delete',function(req,res){
     fs.unlink('./public/uploads/'+req.body.address,function(err){
-        console.log(err)
+       if(err) console.log(err)
     })
     book.findByIdAndDelete(req.body.id,function(err,doc){
         res.send("done")
