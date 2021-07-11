@@ -1,6 +1,7 @@
 const mongoose=require('mongoose')
 const bookSchema=mongoose.Schema({
-    id:Number,
-    name:String
+    name:String,
+    author:String,
+    image:String
 })
 module.exports=mongoose.model('book',bookSchema)

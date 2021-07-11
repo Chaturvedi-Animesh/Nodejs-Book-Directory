@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">  
+      <title>Book Directory</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div id='container-div'>
+    <h1>Book Directory</h1>
+
+    <form action="/addbook" method="post" enctype="multipart/form-data">
+        <input type="file" name="photo" id="photo" accept="image/*">
+    <input type="text" name="name" id="id" placeholder="Book Name">
+    <input type="text" name="author" id="name" placeholder="Author name">
+    <button type="submit"><span class=material-icons>add_circle</span></button>
+
+    </form>
+
+
+
+    <table>
+        <% books.forEach(element => { %>
+            <tr>
+                <td><img src="uploads/<%=element.image  %> " id="book_img"></td>
+                <td><strong>Name: </strong><%=element.name  %> <br>
+                <strong>Author: </strong> <%=element.author  %> </td>
+                <td><button><span class="material-icons">delete_forever</span></button></td>
+            </tr>
+
+        <% }) %>
+       
+    </table>
+
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
+
+
+
+

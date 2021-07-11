@@ -1,0 +1,40 @@
+html,body{
+    margin: 0%;
+    padding: 0%;
+}
+
+#container-div{
+
+width: fit-content;
+color: black;
+text-align: center;
+margin: auto;
+padding: 0% 3% 2%;
+border-radius: 27px;
+box-shadow: 0px 0px 20px grey;
+
+}
+
+
+button span{
+    position: relative;
+    top:8px;
+}
+
+button{
+    color:#3f6ad8;
+    background-color: white;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+#book_img{
+
+    max-height: 200px;
+    max-width: 200px;
+
+}
+table{
+    margin: auto;
+}
