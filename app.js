@@ -83,6 +83,9 @@ app.put('/update',(req,res)=>{
 })
 
 app.put('/delete',function(req,res){
+    fs.unlink('./public/uploads/'+req.body.address,function(err){
+        console.log(err)
+    })
     book.findByIdAndDelete(req.body.id,function(err,doc){
         res.send("done")
     })

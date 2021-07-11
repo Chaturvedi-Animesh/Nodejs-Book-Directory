@@ -29,7 +29,7 @@
                 <td><img src="uploads/<%=element.image  %> " id="book_img"></td>
                 <td><strong>Name: </strong><%=element.name  %> <br>
                 <strong>Author: </strong> <%=element.author  %> </td>
-                <td><button><span class="material-icons">delete_forever</span></button></td>
+                <td><button onclick="del('<%= element._id %>','<%=element.image %>')"><span class="material-icons">delete_forever</span></button></td>
             </tr>
 
         <% }) %>
